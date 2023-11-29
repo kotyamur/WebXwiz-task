@@ -578,6 +578,12 @@
       "notifications": "Сповіщення",
       "security": "Безпека",
       "logout": "Вийти",
+      "dashboard": "Панель",
+      "sections": "Розділи",
+      "buyers": "Покупці",
+      "financial": "Фінанси",
+      "report": "Звіт",
+      "sellers": "Продавці",
       "Seller": {
         "financial_balance": "Фінансовий баланс",
         "sales_offers": "Продажі та пропозиції",

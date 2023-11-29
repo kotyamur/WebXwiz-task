@@ -27,6 +27,10 @@ export const ROUTES = {
     PAYMENT_DETAILS: '/cabinet/payment/details',
     NOTIFICATIONS: '/cabinet/notifications',
     SECURITY: '/cabinet/security',
+    DASHBOARD: '/cabinet/dashboard',
+    SECTIONS: '/cabinet/sections',
+    BUYERS: '/cabinet/buyers',
+    REPORT: '/cabinet/report',
 
     SELLER: {
       FINANCIAL_BALANCE: '/cabinet/financial-balance',
@@ -45,6 +49,7 @@ export const ROUTES = {
   AUTH: {
     LOGIN: '/login',
     REGISTRATION: '/registration',
+    LOGOUT: '/logout',
 
     CONFIRM_EMAIL: '/confirm-email',
     CONFIRM_EMAIL_VERIFIED: '/confirm-email/verified',

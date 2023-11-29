@@ -592,6 +592,12 @@
       "notifications": "Notifications",
       "security": "Security",
       "logout": "Logout",
+      "dashboard": "Dashboard",
+      "sections": "Sections",
+      "buyers": "Buyers",
+      "financial": "Financial",
+      "report": "Report",
+      "sellers": "Sellers",
       "Seller": {
         "financial_balance": "Financial & Balance",
         "sales_offers": "Sales & Offers",

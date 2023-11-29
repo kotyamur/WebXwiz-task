@@ -145,11 +145,11 @@
         padding: toRem(12) toRem(24) toRem(16) toRem(24);
     }
 
-    &_item {
-        &:not(:first-child) {
-            padding-top: toRem(12);
-        }
-    }
+    // &_item {
+    //     &:not(:first-child) {
+    //         padding-top: toRem(12);
+    //     }
+    // }
 
     &_button {
         @include flexRow(center, flex-start);
