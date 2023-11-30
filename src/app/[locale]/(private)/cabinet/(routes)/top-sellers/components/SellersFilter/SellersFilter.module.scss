@@ -1,0 +1,56 @@
+@import "constants/constans.scss";
+
+.SellersFilterWrapper {
+    padding: 1px;
+    border-radius: 16px;
+    border: 1px solid $grey_pale;
+    box-shadow: 0px 8px 24px -4px rgba(0, 0, 0, 0.02);
+}
+
+.tabs {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    & > li {
+        width: 106px;
+    }
+}
+
+.tab {
+    &_filter {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        width: 106px;
+        padding: toRem(10) toRem(16);
+        color: $accent;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: calc(20/14);
+        
+
+        [data-theme="dark"] & {
+                color: $dark;
+            }
+
+        @media (any-hover: hover) {
+            &:hover {
+                border-radius: 14px;
+                background: $blue-pale;
+            }
+        }
+
+        &.active {
+            pointer-events: none;
+            border-radius: 14px;
+            background: $blue-pale;    
+            color: $accent;
+
+            [data-theme="dark"] & {
+                color: $dark;
+            }
+        }
+    }
+}

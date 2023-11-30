@@ -590,7 +590,7 @@
         "top_sellers": "Топ-продавці",
         "new_offer": "Створити товар"
       }
-    },    
+    },
     "Profile": {
       "change_background": "Змінити тло",
       "level": "Рівень",
@@ -787,6 +787,13 @@
         "product": "Продукт",
         "to_product": "Запущено",
         "buyer": "Покупець"
+      }
+    },
+    "TopSellers": {
+      "Filter": {
+        "allTime": "Весь час",
+        "thisYear": "Цей рік",
+        "thisMonth": "За місяць"
       }
     }
   },

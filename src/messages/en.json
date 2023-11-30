@@ -903,7 +903,13 @@
         "title": "Edit"
       }
     },
-    "TopSellers": {},
+    "TopSellers": {
+      "Filter": {
+        "allTime": "All Time",
+        "thisYear": "This Year",
+        "thisMonth": "This Month"
+      }
+    },
     "CreateOffer": {
       "title": "Create Offer",
       "Form": {
