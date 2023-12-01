@@ -3,9 +3,9 @@
 .topSellersContainer {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid $grey_pale;
+    gap: toRem(24);
+    padding-bottom: toRem(24);
+    border-bottom: toRem(1) solid $grey_pale;
 }
 
 .topWrapper {
@@ -16,23 +16,29 @@
 
 .sellersList {
     @include flexRow(center, space-between);
-    gap: 24px;
+    gap: toRem(24);
 }
 
 .sellersItem {
     @include flexColumn(center, center);
-    width: 168px;
-    padding: 16px;
-    border-radius: 16px;
+    width: toRem(168);
+    padding: toRem(16);
+    border-radius: toRem(16);
     background: $grey_light;
+    line-height: 137.5%; /* 22/16 */
+    font-size: toRem(16);
+    color: $dark;
+    & > p {
+        font-weight: 700;
+    }
 }
 
 .sellerImage {
     position: relative;
     display: inline-block;
-    width: 80px;
-    height: 80px;
-    margin-bottom: 30px;
+    width: toRem(80);
+    height: toRem(80);
+    margin-bottom: toRem(30);
     border-radius: 50%;
 
     & img {
@@ -47,18 +53,14 @@
     position: absolute;
     left: 50%;
     bottom: 0;
-    transform: translateX(-50%) translateY(40%);
-    border-radius: 50%;
-    border: toRem(1) solid $white;
-    border-radius: 40px;
-    background: #F0EFF0;
-    color: $dark;
-    font-weight: 400;
-    padding: 10px;
+    transform: translateX(-50%) translateY(50%);
     width: toRem(36);
     height: toRem(36);
-    line-height: 137.5%; /* 22/16 */
-    font-size: 16px;
+    padding: toRem(10);
+    border-radius: 50%;
+    border: toRem(2) solid $white;
+    background: #F0EFF0;
+    font-weight: 400;
 }
 
 .seller_place.first {
@@ -66,9 +68,12 @@
 }
 
 .seller_achive {
-    margin-top: toRem(12);
-    @include flexRow(center, flex-start);
+    @include flexRow(center, center);
     column-gap: toRem(4);
+    margin-top: toRem(12);
     color: $mainColor;
-
+    font-weight: 400;
+}
+.seller_achive.first > svg {
+    color: $gold;
 }

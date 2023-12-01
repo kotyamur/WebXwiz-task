@@ -67,7 +67,11 @@ export const TopSellersList = () => {
                 </span>
               </div>
               <p>{seller.userName}</p>
-              <div className={s.seller_achive}>
+              <div
+                className={`${s.seller_achive} ${
+                  isFirst ? s.first : ''
+                }`.trim()}
+              >
                 <AchiveIcon />
                 <span>{seller.achievements[1]} Sells</span>
               </div>
