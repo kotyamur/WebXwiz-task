@@ -13,3 +13,62 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.sellersList {
+    @include flexRow(center, space-between);
+    gap: 24px;
+}
+
+.sellersItem {
+    @include flexColumn(center, center);
+    width: 168px;
+    padding: 16px;
+    border-radius: 16px;
+    background: $grey_light;
+}
+
+.sellerImage {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 30px;
+    border-radius: 50%;
+
+    & img {
+        width: fit-content;
+        border-radius: 50%;
+    }
+
+}
+
+.seller_place {
+    @include flexRow(center, center);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) translateY(40%);
+    border-radius: 50%;
+    border: toRem(1) solid $white;
+    border-radius: 40px;
+    background: #F0EFF0;
+    color: $dark;
+    font-weight: 400;
+    padding: 10px;
+    width: toRem(36);
+    height: toRem(36);
+    line-height: 137.5%; /* 22/16 */
+    font-size: 16px;
+}
+
+.seller_place.first {
+    background-color: $gold;
+}
+
+.seller_achive {
+    margin-top: toRem(12);
+    @include flexRow(center, flex-start);
+    column-gap: toRem(4);
+    color: $mainColor;
+
+}
