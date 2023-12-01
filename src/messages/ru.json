@@ -794,6 +794,13 @@
         "allTime": "Весь час",
         "thisYear": "Цей рік",
         "thisMonth": "За місяць"
+      },
+      "Form": {
+        "search_label": "Пошук",
+        "search_placeholder": "Шукай продавця",
+        "date_label": "Дата реєстрації",
+        "date_from": "Від",
+        "date_to": "До"
       }
     }
   },

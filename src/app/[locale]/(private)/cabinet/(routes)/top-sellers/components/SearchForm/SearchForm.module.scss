@@ -1,0 +1,6 @@
+@import "constants/constans.scss";
+
+.wrapper {
+    @include flexRow(center, space-between);
+    gap: toRem(24);
+}

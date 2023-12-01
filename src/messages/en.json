@@ -908,6 +908,13 @@
         "allTime": "All Time",
         "thisYear": "This Year",
         "thisMonth": "This Month"
+      },
+      "Form": {
+        "search_label": "Search",
+        "search_placeholder": "Search Seller",
+        "date_label": "Signup Date",
+        "date_from": "From",
+        "date_to": "To"
       }
     },
     "CreateOffer": {
