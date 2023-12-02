@@ -1,43 +1,19 @@
 'use client';
+import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 import { SellersFilter } from '../SellersFilter';
-
-import MarvinImg from 'assets/images/top-sellers/marvin.png';
+import { AchiveIcon } from 'components/icons/AchiveIcon';
+import { ITopSellersConfig } from '../../page';
 
 import s from './TopSellersList.module.scss';
-import { AchiveIcon } from 'components/icons/AchiveIcon';
 
-const sellers = [
-  {
-    userName: 'Kristin Watson',
-    avatarURL: MarvinImg,
-    achievements: ['1', '2,140'],
-  },
-  {
-    userName: 'Theresa Webb',
-    avatarURL: MarvinImg,
-    achievements: ['2', '2,140'],
-  },
-  {
-    userName: 'Guy Hawkins',
-    avatarURL: MarvinImg,
-    achievements: ['3', '2,140'],
-  },
-  {
-    userName: 'Ralph Edwards',
-    avatarURL: MarvinImg,
-    achievements: ['4', '2,140'],
-  },
-  {
-    userName: 'Wade Warren',
-    avatarURL: MarvinImg,
-    achievements: ['5', '2,140'],
-  },
-];
+interface TopSellersListProps {
+  config: ITopSellersConfig;
+}
 
-export const TopSellersList = () => {
+export const TopSellersList: FC<TopSellersListProps> = ({ config }) => {
   const t = useTranslations('ProfilePage.Sidebar.Seller');
 
   return (
@@ -47,7 +23,7 @@ export const TopSellersList = () => {
         <SellersFilter />
       </div>
       <ul className={s.sellersList}>
-        {sellers?.map((seller, index) => {
+        {config.sellers?.map((seller, index) => {
           const isFirst = seller.achievements[0] === '1';
           return (
             <li className={s.sellersItem} key={index}>

@@ -26,3 +26,13 @@ export interface IGetAllSellersResponse {
 export interface IGetSellerProductsResponse {
   getSellerProducts: IProduct[];
 }
+
+export interface ISeller {
+  avatarURL: string | StaticImageData;
+  email: string;
+  id: string;
+  userName: string;
+  number: string;
+  signupDate: string;
+  sells: number[];
+}
