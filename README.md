@@ -2,6 +2,7 @@
 
 #### The frontend for game account trading project
 
+The compiled page can be seen at http://localhost:3000/cabinet/top-sellers
 ---
 
 ### Short instructions for starting the project
