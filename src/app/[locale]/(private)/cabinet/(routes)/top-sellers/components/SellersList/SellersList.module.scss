@@ -67,6 +67,21 @@
         }
     }
 
+    &_mainInfo{
+        @include flexRow(center);
+        column-gap: toRem(8);
+    }
+
+    &_info{
+        @include flexColumn(flex-start, center);
+        column-gap: toRem(4);
+    }
+
+    &_sells {
+        @include flexColumn(flex-start, center);
+        column-gap: toRem(4);
+    }
+
     &_filter {
         @include flexRow(center);
         column-gap: toRem(8);

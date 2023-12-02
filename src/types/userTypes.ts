@@ -1,4 +1,5 @@
 import { EnumRoles } from 'types/enums';
+import { StaticImageData } from 'next/image';
 import { IProduct, IPurchaseProduct, IUserDetail } from './shopTypes';
 
 interface KeyValue {
@@ -20,7 +21,7 @@ export interface Address {
 export interface IUser {
   achievements: string[];
   address: Address;
-  avatarURL: string;
+  avatarURL: string | StaticImageData;
   backgroundColor: string;
   backgroundImage: string;
   banned: boolean;

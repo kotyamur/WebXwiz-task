@@ -34,6 +34,7 @@ export const ProfileSidebar: FC<ProfileSidebarProps> = ({ config, user }) => {
   const pathname = usePathname();
   const { logout } = useAuth();
   const isSeller = user?.role === EnumRoles.SELLER;
+  
 
   return (
     <aside className={s.sidebar}>
@@ -43,8 +44,8 @@ export const ProfileSidebar: FC<ProfileSidebarProps> = ({ config, user }) => {
             {user?.avatarURL ? (
               <Image
                 src={user?.avatarURL}
-                width={76}
-                height={76}
+                width={70}
+                height={80}
                 alt={user?.userName}
                 loader={({ src, width: w, quality }) => {
                   const q = quality || 75;
@@ -56,11 +57,11 @@ export const ProfileSidebar: FC<ProfileSidebarProps> = ({ config, user }) => {
                 {user?.userName?.substring(0, 1) || user?.email.substring(0, 1)}
               </span>
             )}
-            <div className={s.user_level}>
+            {/* <div className={s.user_level}>
               <span className="text_accent">
                 {t('level')}.{user?.level}
               </span>
-            </div>
+            </div> */}
           </div>
           <div className={s.user_info}>
             <span className={s.user_name}>

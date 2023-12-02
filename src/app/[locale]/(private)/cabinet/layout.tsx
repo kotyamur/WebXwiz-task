@@ -6,8 +6,10 @@ import { Header } from 'components/header';
 import { ProfileSidebar } from './components/ProfileSidebar';
 
 import { buyerConfig } from './sidebar-configs/buyer-config';
+import JaneCooperImg from 'assets/images/sellers/JaneCooper.png';
 
 import s from './Cabinet.module.scss';
+import { IUser } from 'types/userTypes';
 
 export interface ISidebarConfig {
   items: {
@@ -25,6 +27,28 @@ interface PrivateLayoutProps {
 export default async function PrivateLayout({ children }: PrivateLayoutProps) {
 
   let currentConfig: ISidebarConfig = buyerConfig;
+  const user: IUser = {
+    avatarURL: JaneCooperImg,
+    email: 'jane@gmail.com',
+    level: 10,
+    role: EnumRoles.BUYER,
+    userName: 'Jane Cooper',
+    achievements: [''],
+    address: { city: '', phoneNumber: '', street: '', zipCode: '' },
+    backgroundColor: '',
+    backgroundImage: '',
+    banned: false,
+    bonuses: 1,
+    confidentLvl: 1,
+    emailConfirmDate: '',
+    experience: 1,
+    id: '',
+    isTwoFactorEnabled: false,
+    qrCode: '',
+    ratingsStats: { entries: [{ key: '', value: '' }] },
+    stripeId: '',
+    subscribed: false,
+  };
 
   return (
     <>
@@ -32,9 +56,7 @@ export default async function PrivateLayout({ children }: PrivateLayoutProps) {
       <main className={s.profile}>
         <Container>
           <div className={s.profile_wrapper}>
-            <ProfileSidebar
-              config={currentConfig}
-            />
+            <ProfileSidebar config={currentConfig} user={user} />
             {children}
           </div>
         </Container>

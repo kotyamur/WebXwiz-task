@@ -1,65 +1,48 @@
 'use client';
-import { useState } from 'react';
+import { FC, useState } from 'react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import { generateRandomNumber } from 'utils/utils';
-import MarvinImg from 'assets/images/top-sellers/marvin.png';
 import { CheckIcon } from 'components/icons/CheckmarkIcon';
 import { MinusRoundIcon } from 'components/icons/MinusIcon';
 import { SecondaryButton } from 'ui/components/Button';
 import { FilterArrowsIcon } from 'components/icons/FilterIcon';
 import { ArrowLeft, ArrowRight } from 'components/icons/ArrowIcons';
 
+import { ISellersConfig } from '../../page';
+
 import s from './SellersList.module.scss';
 
-const data = [
-  {
-    avatarURL: MarvinImg,
-    email: 'smallpaul@me.com',
-    id: generateRandomNumber(),
-    userName: 'Kathryn Murphy',
-    number: '0999999999',
-    signupDate: '31/05/20, 14:20',
-    sells: 25,
-  },
-  {
-    avatarURL: MarvinImg,
-    email: 'smallpaul@me.com',
-    id: generateRandomNumber(),
-    userName: 'Kathryn Murphy',
-    number: '0999999999',
-    signupDate: '31/05/20, 14:20',
-    sells: 25,
-  },
-];
+interface SellersListProps {
+  config: ISellersConfig;
+}
 
+export const SellersList: FC<SellersListProps> = ({ config }) => {
+  const t = useTranslations('ProfilePage.TopSellers.Table');
 
-export const SellersList = () => {
-    const t = useTranslations('ProfilePage.TopSellers.Table');
-    
-    const [pageIndex, setPageIndex] = useState(0);
+  const [pageIndex, setPageIndex] = useState(0);
 
-    const rowsLength = 520;
-    const pageSize = 10;
+  const rowsLength = 520;
+  const pageSize = 10;
 
-    const currentPage = pageIndex + 1;
-    const endItemIndex = Math.min(currentPage * pageSize, rowsLength);
-    const numPagesToShow = 1; // з кожної сторони + 1 кнопка
-    const pageCount = 52;
-    const canPreviousPage = pageIndex > 0;
-    const canNextPage = pageIndex < pageCount -1;
-    
-    const handleClickNextPage = () => {
-      setPageIndex(pageIndex + 1);
-    };
+  const currentPage = pageIndex + 1;
+  const endItemIndex = Math.min(currentPage * pageSize, rowsLength);
+  const numPagesToShow = 1; // з кожної сторони + 1 кнопка
+  const pageCount = 52;
+  const canPreviousPage = pageIndex > 0;
+  const canNextPage = pageIndex < pageCount - 1;
 
-    const handleClickPreviosPage = () => {
-      setPageIndex(pageIndex - 1);
-    };
+  const handleClickNextPage = () => {
+    setPageIndex(pageIndex + 1);
+  };
 
-    const handleClickPage = (page: number) => {
-      setPageIndex(page);
-    };
+  const handleClickPreviosPage = () => {
+    setPageIndex(pageIndex - 1);
+  };
+
+  const handleClickPage = (page: number) => {
+    setPageIndex(page);
+  };
 
   return (
     <div className={s.wrapper}>
@@ -88,15 +71,33 @@ export const SellersList = () => {
           </tr>
         </thead>
         <tbody className={s.table_body}>
-          {data.map((it) => (
-            <tr>
+          {config.sellers.map((it) => (
+            <tr key={it.id}>
               <td>
                 <CheckIcon />
               </td>
-              <td>{it.userName}</td>
+              <td>
+                <div className={s.table_mainInfo}>
+                  <Image
+                    src={it.avatarURL}
+                    width={48}
+                    height={48}
+                    alt={it.userName}
+                  />
+                  <div className={s.table_info}>
+                    <span>{it.userName}</span>
+                    <span>{it.email}</span>
+                  </div>
+                </div>
+              </td>
               <td>{it.number}</td>
               <td>{it.signupDate}</td>
-              <td>{it.sells}</td>
+              <td>
+                <div className={s.table_sells}>
+                  <span>{it.sells[0]}</span>
+                  <span>(${it.sells[1]})</span>
+                </div>
+              </td>
               <td>
                 <button className={s.table_body}>
                   <MinusRoundIcon />
