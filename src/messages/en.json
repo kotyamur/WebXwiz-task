@@ -915,6 +915,13 @@
         "date_label": "Signup Date",
         "date_from": "From",
         "date_to": "To"
+      },
+      "Table": {
+        "user_name": "User Name",
+        "number": "Number",
+        "signup_date": "Signup Date",
+        "sells": "Sells",
+        "of": "of"
       }
     },
     "CreateOffer": {

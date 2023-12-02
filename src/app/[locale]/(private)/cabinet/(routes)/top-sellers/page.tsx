@@ -4,6 +4,7 @@ import { Title } from './components/Title';
 
 import s from './TopSellers.module.scss';
 import { SearchForm } from './components/SearchForm';
+import { SellersList } from './components/SellersList';
 
 export default async function TopSellers() {
   return (
@@ -12,8 +13,7 @@ export default async function TopSellers() {
         <Title />
         <TopSellersList />
         <SearchForm />
-        <div>List</div>
-        <div>Pagination</div>
+        <SellersList />
       </div>
     </main>
   );

@@ -1,0 +1,146 @@
+@import "constants/constans.scss";
+
+.wrapper {
+    @include flexColumn(center, space-between);
+}
+
+.table {
+    width: 100%;
+    min-width: toRem(400);
+    border-collapse: collapse;
+    color: $dark;
+    line-height: 137.5%; /* 22/16 */
+    font-size: toRem(16);
+    font-weight: 400;
+
+    [data-theme="dark"] & {
+        color: #D8DEEB;
+    }
+
+    &_head {
+        background-color: $grey;
+        border-bottom: toRem(1) solid $grey_pale;
+
+        [data-theme="dark"] & {
+            background-color: rgb($grey_misty, 0.24);
+        }
+
+        & th {
+            white-space: nowrap;
+            user-select: none;
+
+            &:last-child {
+                padding: 0;
+                width: toRem(48);
+            }
+        }
+    }
+
+    & th,
+    & td {
+        padding: toRem(16) toRem(12);
+        font-weight: 400;
+        text-align: left;
+
+        &:first-child {
+            padding-left: toRem(24);
+        }
+
+        &:last-child {
+            padding-right: toRem(24);
+        }
+    }
+
+    &_body {
+        & tr {
+            &:not(:last-child) {
+                border-bottom: toRem(1) solid $grey_pale;
+            }
+
+            [data-theme="dark"] & {
+                color: $dark;
+
+                &:nth-of-type(even) {
+                    background-color: rgb($grey_misty, 0.24);
+                }
+            }
+        }
+    }
+
+    &_filter {
+        @include flexRow(center);
+        column-gap: toRem(8);
+
+        & svg {
+            width: toRem(20);
+            height: toRem(20);
+        }
+    }
+
+    .table_button {
+        min-width: auto;
+        width: toRem(48);
+        padding: 0;
+        border-color: transparent;
+
+        [data-theme="dark"] & {
+            background-color: transparent;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: $grey_misty_36;
+                }
+            }
+        }
+    }
+}
+
+.pagination {
+    @include flexRow(center, space-between);
+    column-gap: toRem(24);
+    padding: toRem(24);
+    border-top: toRem(1) solid $grey_pale;
+    width: 100%;
+
+    &_controls {
+        @include flexRow(center);
+        column-gap: toRem(16);
+        user-select: none;
+    }
+
+    .pagination_control {
+        width: toRem(48);
+        border-color: transparent;
+        min-width: auto;
+        padding: 0;
+        transition: none;
+        color: $accent;
+
+        [data-theme="dark"] & {
+            border-color: transparent;
+            background-color: transparent;
+            color: $dark;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $grey;
+            }
+        }
+
+        &.active {
+            pointer-events: none;
+            background-color: $blue_pale;
+
+            [data-theme="dark"] & {
+                background-color: rgb($grey_misty, 0.24);
+            }
+        }
+
+        &.disabled {
+            pointer-events: none;
+            opacity: 0.5;
+            color: $mainColor;
+        }
+    }
+}
